@@ -1,0 +1,10 @@
+package com.ricardo.modelo;
+
+public class Cancion {
+
+	 private String titulo;
+	 private String autor;
+	 private String imagen;
+	 private int id;
+}
+

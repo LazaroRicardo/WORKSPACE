@@ -1,0 +1,46 @@
+package com.ricardo.controlers;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
+
+import com.ricardo.database.BBDD;
+
+@WebServlet("/listausuarios")
+public class ListaUsuariosServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		//voy a comprobar si el usuario está en sesión:
+		HttpSession session = request.getSession();
+		
+		//Si exsiste el dato usuario en sesion lo dejo pasar, sino lo redirijo a login:
+		if(session.getAttribute("usuario")!=null) {
+			
+		}else {
+			
+		}
+		
+		// hemos quitado a pepe :-(
+		BBDD bbdd = new BBDD();
+		// En el request asocio: el atributo "losusuarios" se enlaza a la base de
+		// datos[bbdd] y en la clase jsp si lo pongo con "${}" me saldrá lo que se
+		// encuantra en bbdd
+		request.setAttribute("losUsuarios", bbdd.usuarios);
+
+		request.getRequestDispatcher("/listausuarios.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

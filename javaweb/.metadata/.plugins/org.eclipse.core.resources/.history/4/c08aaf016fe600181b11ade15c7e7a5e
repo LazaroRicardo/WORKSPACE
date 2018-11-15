@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Esta es la segunda pag. inicial!!!</h1> 
+	<a href="./Dashboard.html">Pag. Segundas</a>
+</body>
+</html>

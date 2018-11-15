@@ -1,0 +1,9 @@
+package com.ricardo.modelo;
+
+public class Cancion {
+
+	String titulo;
+	String autor;
+	String imagen;
+	int id;
+}

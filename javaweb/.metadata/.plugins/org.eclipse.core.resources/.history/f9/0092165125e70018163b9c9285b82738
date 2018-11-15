@@ -1,0 +1,44 @@
+package com.ricardo.modelos;
+
+public class Habitacion {
+
+	private int hid;
+	private String calle;
+	private int m2;
+	private String volverAtras;
+	
+	public Habitacion(int hid, String calle, int m2, String volverAtras) {
+		this.hid = hid;
+		this.calle = calle;
+		this.m2 = m2;
+		this.volverAtras = volverAtras;
+	}
+
+	public int getHid() {
+		return hid;
+	}
+
+	public void setHid(int hid) {
+		this.hid = hid;
+	}
+
+	public String getCalle() {
+		return calle;
+	}
+
+	public void setCalle(String calle) {
+		this.calle = calle;
+	}
+
+	public int getM2() {
+		return m2;
+	}
+
+	public void setM2(int m2) {
+		this.m2 = m2;
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.ricardo.modelos;
+
+public class Usuario {
+
+}

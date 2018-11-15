@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+ <%
+	Habitacion laHabitacion = (Habitacion)request.getAttribute("elUsuario");
+%>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Habiteishon</title>
+</head>
+<body>
+
+<h1>Datos de Habitación</h1>
+	<ul>
+		<li>HID:${elUsuario.hid}</li>
+		<li>Calle:${elUsuario.calle}</li>
+		<li>M2:${elUsuario.m2}</li>
+	</ul>
+</body>
+</html>

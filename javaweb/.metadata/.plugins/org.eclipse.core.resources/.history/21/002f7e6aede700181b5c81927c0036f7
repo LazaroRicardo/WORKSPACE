@@ -1,0 +1,39 @@
+package com.ricardo.controlers;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.ricardo.database.BBDD;
+
+@WebServlet("/habitacion")
+public class HabitacionServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String idHabitacion = request.getParameter("hid");
+		System.out.println("HID recibido:" + idHabitacion);
+		int hidH=Integer.parseInt(idHabitacion);
+		
+		BBDD bbdd = new BBDD();
+		
+		request.setAttribute("laHabitacion", bbdd.getHabitacionById(hidH));
+
+		request.getRequestDispatcher("/habitacion.jsp").forward(request, response);
+		//nuevo contenido para volver a usuario:
+		request.setAttribute("losUsuarios", bbdd.usuarios);
+
+		request.getRequestDispatcher("/habitacion.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

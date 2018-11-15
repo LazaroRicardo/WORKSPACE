@@ -1,0 +1,36 @@
+package com.ricardo.controlers;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.ricardo.database.BBDD;
+import com.ricardo.modelos.Usuario;
+
+@WebServlet("/listausuarios")
+public class ListaUsuariosServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// el new bbdd llama al "public BBDD()" de la clase "BBDD.java" pudiendo usar
+		// sus parámetros públicos los que a su vez están relacionados con los privados.
+		BBDD bbdd = new BBDD();
+		Usuario elegido = bbdd.usuarios.get(1);
+
+		request.setAttribute("elUsuario", elegido);
+		// dispacher=despachador, que el jsp devuelva la respuesta. El forward pasa la
+		// respuesta a jsp.
+		request.getRequestDispatcher("/usuario.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

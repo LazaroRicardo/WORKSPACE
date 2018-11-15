@@ -1,0 +1,9 @@
+package com.ricardo.modelos;
+
+public class Usuario {
+
+	public int id;
+	public String name;
+	public String email;
+	
+}

@@ -1,0 +1,55 @@
+package com.ricardo.modelo;
+
+public class Cancion {
+
+	 private String titulo;
+	 private String autor;
+	 private String imagen;
+	 private int id;
+	 
+	public Cancion(String titulo, String autor, String imagen, int id) {
+		this.titulo = titulo;
+		this.autor = autor;
+		this.imagen = imagen;
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	 
+	 
+	 
+	 
+	 
+	 
+}
+

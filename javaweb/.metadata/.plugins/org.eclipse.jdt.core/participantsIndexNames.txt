@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\Ricardo\WORKSPACE\javaweb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4186295851.index
+\MySpotify\src
+C:\Ricardo\WORKSPACE\javaweb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1887873950.index
+\ProyectoMVC2\src
+C:\Ricardo\WORKSPACE\javaweb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\191317515.index
+\ProyectoMVC\src
+C:\Ricardo\WORKSPACE\javaweb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1857294320.index
+\ProyectoMVC2\src

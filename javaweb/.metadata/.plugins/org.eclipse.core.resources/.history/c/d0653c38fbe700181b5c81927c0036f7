@@ -1,0 +1,45 @@
+package com.ricardo.controlers;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		request.getRequestDispatcher("/login.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String emailrecibido = request.getParameter("email");
+		String passwordrecibido = request.getParameter("password");
+
+		System.out.println("Estoy en el post!!");
+		System.out.println("Email:" + emailrecibido);
+		System.out.println("Password:" + passwordrecibido);
+
+		// decidir si existe usuario con ese email y passwor...entrar en lista usuarios,
+		// sino volver a mostra formulario:
+		
+		if(emailrecibido.equals("r@r.es","a@a.es") && passwordrecibido.equals("xxx")) {
+			//llevarlo a lista usuario
+			//sirven las 2 rutas que vienen a continuacion:
+			//request.getRequestDispatcher("/listausuarios").forward(request, response);
+			response.sendRedirect("listausuarios");
+		}else {
+		//devolverlo a login
+			request.setAttribute("errormensaje", "Usuario y contraseña no existe!!");
+			this.doGet(request, response);
+		}
+
+	}
+}

@@ -1,0 +1,40 @@
+<%@page import="com.ricardo.modelos.Habitacion"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+   
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Habiteishon</title>
+<link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Datos de Habitación</h1>
+	<ul>
+		<li>HID: ${laHabitacion.hid}</li>
+		<li>Calle: ${laHabitacion.calle}</li>
+		<li>Metros2: ${laHabitacion.m2}</li>
+		
+		<c:forEach var="unUsuario" items="${losUsuarios}">  
+  			<li>
+  			<!-- para que al pinchar en cada usuario te lleve a una pag diferente:-->
+	  			<a href="./usuario?id=${unUsuario.id}">
+	  				<div>( ${unUsuario.id} )</div>
+	  				<div>${unUsuario.name}</div>
+	  			</a>
+  			</li>
+		</c:forEach>
+		
+		<button>
+			<a href="./usuario">Volver Atrás</a>
+		</button>
+	</ul>
+	<ul>
+		<li></li>
+	</ul>
+	
+</body>
+</html>

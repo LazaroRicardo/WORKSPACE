@@ -1,0 +1,12 @@
+package com.ricardo.bbdd;
+
+import java.util.ArrayList;
+
+import com.ricardo.modelo.Cancion;
+
+public class BBDDCanciones {
+
+	//necesito almacenar las canciones en una lista
+	public ArrayList<Cancion>canciones = new ArrayList<Cancion>();
+	
+}

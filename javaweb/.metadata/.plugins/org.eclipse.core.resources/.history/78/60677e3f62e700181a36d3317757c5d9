@@ -1,0 +1,41 @@
+package com.ricardo.bbdd;
+
+import java.util.ArrayList;
+
+import com.ricardo.modelo.Cancion;
+import com.ricardo.modelos.Usuario;
+
+public class BBDDCanciones {
+
+	//necesito almacenar las canciones en una lista
+	public ArrayList<Cancion>canciones = new ArrayList<Cancion>();
+	
+	public BBDD() {
+		this.fillCanciones();
+	}
+	
+	private boolean fillUsuarios() {
+		usuarios.add(new Usuario(1, "Pepe", "p@p.es", null));
+		usuarios.add(new Usuario(2, "Luisa", "l@l.es", null));
+		usuarios.add(new Usuario(3, "Mordor", "m@m.es", null));
+
+		return true;
+	}
+	
+	// metodo para que nos enseñe un usuario concreto en funcion de su id:
+	// Obtener usuario usuario por su id:
+	// Si el usuario no existe nos vevuuelve un null:
+	public Usuario getUsuarioById(int id) {
+		Usuario usuarioADevolver = null;
+		// buscamos entre cada usuario y comparamos con el id que se le indica al
+		// navegador:
+		for (Usuario unUsuario : usuarios) {
+			if (unUsuario.getId() == id) {
+				usuarioADevolver = unUsuario;
+				// break para que el for deje de buscar al encontrar el resultado esperado.
+				break;
+			}
+		}
+		return usuarioADevolver;
+	}	
+}

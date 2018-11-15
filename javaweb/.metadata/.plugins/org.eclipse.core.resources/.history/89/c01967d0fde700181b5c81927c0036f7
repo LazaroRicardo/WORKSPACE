@@ -1,0 +1,53 @@
+package com.ricardo.modelos;
+//modelo de MVC:
+public class Usuario {
+
+	//propiedades en minúscula:
+	private int id;
+	private String name;
+	private String email;
+	private Habitacion habitacion;
+	private String password;
+
+	public Usuario(int id, String name, String email, Habitacion habitacion, String password) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.habitacion = habitacion;
+		this.password = password;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public Habitacion getHabitacion() {
+		return habitacion;
+	}
+
+	public void setHabitacion(Habitacion habitacion) {
+		this.habitacion = habitacion;
+	}
+	
+}
