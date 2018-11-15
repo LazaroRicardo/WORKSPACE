@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("Password:" + passwordrecibido);
 
 		// Si existe o no el usuario:
-		BBDD bd = new BBDD();
+		BBDD bd = BBDD.getInstance();
 
 		boolean existeUsuario = bd.exiseUsuarioPorEmailYPassword(emailrecibido, passwordrecibido);
 
@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 
 		if (existeUsuario) {
 
-			sesion.setAttribute("usuario", emailrecibido);
+			sesion.setAttribute("usuario", existeUsuario);
 			// llevarlo a lista usuario
 			// sirven las 2 rutas que vienen a continuacion pero la de forward te deja
 			// acceder a la pag siguiente si conoces su URL y redirect no te deja si no

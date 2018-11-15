@@ -1,0 +1,58 @@
+package com.ricardo.controlers;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.ricardo.database.BBDD;
+import com.ricardo.modelos.Usuario;
+
+@WebServlet("/registrarse")
+public class RegistrarseServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		request.getRequestDispatcher("/registrarse.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String namerecibido = request.getParameter("name");
+		String emailrecibido = request.getParameter("email");
+		String passwordrecibido = request.getParameter("password");
+		String confirmpassword = request.getParameter("confirmpassword");
+
+		System.out.println("Nuevo usuario recibido");
+		System.out.println("Name:" + namerecibido);
+		System.out.println("Email:" + emailrecibido);
+		System.out.println("Password:" + passwordrecibido);
+		System.out.println("Passwordc:" + confirmpassword);
+		
+		Usuario nuevoUsuario = new Usuario(0, namerecibido, emailrecibido, passwordrecibido, null);
+
+		// Continuar e introducir el usuario en bbdd si emailrecibido es diferente de
+		// null y no está vacío y que email contenga @:
+		//-> if (emailrecibido != null && !emailrecibido.equals("") && emailrecibido.indexOf("@") > 0) {
+		//Nueva manera:
+		if (nuevoUsuario.esValido(confirmpassword)) {
+			// volver atras si no están correctos los datos:
+			
+			BBDD bd = new BBDD();
+			bd.insertaUsuario(nuevoUsuario);
+			
+			response.sendRedirect("/listausuarios");
+			
+		} else {
+			request.setAttribute("mensajeerror", "Datos incorrectos");
+			request.setAttribute("nuevousuario", nuevosUario);
+			this.doGet(request, response);
+		}
+
+	}
+}

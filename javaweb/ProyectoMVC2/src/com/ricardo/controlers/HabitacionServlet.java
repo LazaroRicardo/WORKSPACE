@@ -33,7 +33,7 @@ public class HabitacionServlet extends HttpServlet {
 		// contraseña si es que se conoce el URL de la pag siguiente y que al hacerlo le
 		// redirija al login.
 		if (session.getAttribute("usuario") != null) {
-			BBDD bbdd = new BBDD();
+			BBDD bbdd = BBDD.getInstance();
 			// En el request asocio: el atributo "losusuarios" se enlaza a la base de
 			// datos[bbdd] y en la clase jsp si lo pongo con "${}" me saldrá lo que se
 			// encuantra en bbdd

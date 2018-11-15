@@ -1,0 +1,95 @@
+//Base de datos:
+package com.ricardo.database;
+
+import java.util.ArrayList;
+
+import com.ricardo.modelos.Habitacion;
+import com.ricardo.modelos.Usuario;
+
+public class BBDD {
+//usuario es un arraylist que dentro va a tener <usuarios> y lo mismo con habitaciones:
+	public ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+	public ArrayList<Habitacion> habitaciones = new ArrayList<Habitacion>();
+
+	public BBDD() {
+		this.fillUsuarios();
+		this.fillHabitaciones();
+
+		this.relacionarUserHab();
+	}
+
+	private boolean fillUsuarios() {
+		usuarios.add(new Usuario(1, "Pepe", "p@p.es", "ppp", null));
+		usuarios.add(new Usuario(2, "Luisa", "l@l.es", "lll", null));
+		usuarios.add(new Usuario(3, "Mordor", "m@m.es", "mmm", null));
+
+		return true;
+	}
+
+	private boolean fillHabitaciones() {
+		habitaciones.add(new Habitacion(125, "Marques, 23", 256));
+		habitaciones.add(new Habitacion(138, "Yolo, 23", 236));
+		habitaciones.add(new Habitacion(426, "Truhán, 23", 126));
+
+		return true;
+	}
+
+	private boolean relacionarUserHab() {
+		usuarios.get(0).setHabitacion(habitaciones.get(2));
+		usuarios.get(1).setHabitacion(habitaciones.get(1));
+		usuarios.get(2).setHabitacion(habitaciones.get(0));
+
+		return true;
+	}
+
+	// metodo para que nos enseñe un usuario concreto en funcion de su id:
+	// Obtener usuario usuario por su id:
+	// Si el usuario no existe nos vevuuelve un null:
+	public Usuario getUsuarioById(int id) {
+		Usuario usuarioADevolver = null;
+		// buscamos entre cada usuario y comparamos con el id que se le indica al
+		// navegador:
+		for (Usuario unUsuario : usuarios) {
+			if (unUsuario.getId() == id) {
+				usuarioADevolver = unUsuario;
+				// break para que el for deje de buscar al encontrar el resultado esperado.
+				break;
+			}
+		}
+		return usuarioADevolver;
+	}
+
+	public Habitacion getHabitacionById(int hid) {
+		Habitacion habitacionADevolver = null;
+
+		for (Habitacion unaHabitacion : habitaciones) {
+			if (unaHabitacion.getHid() == hid) {
+				habitacionADevolver = unaHabitacion;
+				break;
+			}	
+		}
+		
+		return habitacionADevolver;
+	}
+	
+	//enlazar la existencia de los datos recibidos en el servlet con la base de datos y poder poner email y clave de forma específica:
+
+	public boolean exiseUsuarioPorEmailYPassword(String emailrecibido, String passwordrecibido) {
+		boolean existeUsuario = false;
+			
+		
+		//nombre de var=unUsuario, tipo de var=Usuario, Valor de var=This.usuarios y lleva el this porque aparecen en esta clase nombrados.
+		for (Usuario unUsuario : this.usuarios) {
+			if (unUsuario.getEmail().equals(emailrecibido) && unUsuario.getPassword().equals(passwordrecibido)) {
+				existeUsuario = true;	
+				break;
+				}
+			}
+			return existeUsuario;
+	}
+
+	public void insertaUsuario(Usuario nuevousuario) {
+		
+		
+	}	
+}

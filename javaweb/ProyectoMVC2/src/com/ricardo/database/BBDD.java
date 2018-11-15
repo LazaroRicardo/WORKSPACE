@@ -7,11 +7,22 @@ import com.ricardo.modelos.Habitacion;
 import com.ricardo.modelos.Usuario;
 
 public class BBDD {
+	//para transformar la bbdd en singleton y que sea compartida y se privatiza mas abajo:
+	public static BBDD instance=null;
+	
 //usuario es un arraylist que dentro va a tener <usuarios> y lo mismo con habitaciones:
 	public ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 	public ArrayList<Habitacion> habitaciones = new ArrayList<Habitacion>();
 
-	public BBDD() {
+	public static final BBDD getInstance() {
+		if(instance==null) instance=new BBDD();
+		
+		
+		return instance;
+	}
+	
+	private BBDD() {
+		
 		this.fillUsuarios();
 		this.fillHabitaciones();
 
@@ -86,5 +97,17 @@ public class BBDD {
 				}
 			}
 			return existeUsuario;
+	}
+
+	public int insertaUsuario(Usuario nuevoUser) {
+		int nuevoId=0;
+		
+		nuevoId= this.usuarios.size()+1; //simulamos que la base de datos asigna un id consecutivo.
+		nuevoUser.setId(nuevoId);
+		
+		this.usuarios.add(nuevoUser);
+		
+		return nuevoId;
+		
 	}	
 }

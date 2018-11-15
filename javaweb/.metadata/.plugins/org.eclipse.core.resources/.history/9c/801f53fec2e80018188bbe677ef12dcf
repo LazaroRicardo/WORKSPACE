@@ -1,0 +1,71 @@
+package com.ricardo.modelos;
+//modelo de MVC:
+public class Usuario {
+
+	//propiedades en minúscula:
+	private int id;
+	private String name;
+	private String email;
+	private String password;
+	private Habitacion habitacion;
+	
+
+	public Usuario(int id, String name, String email, String password, Habitacion habitacion) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.habitacion = habitacion;
+			}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public Habitacion getHabitacion() {
+		return habitacion;
+	}
+
+	public void setHabitacion(Habitacion habitacion) {
+		this.habitacion = habitacion;
+	}
+
+	
+	//Valida los campos del nuevo usuario si los campos son correctos, bien formados y tienen valor:
+	public boolean esValido() {
+		boolean esValid=false;
+		
+		 esValid=false;
+		
+		return false;
+	}
+}
