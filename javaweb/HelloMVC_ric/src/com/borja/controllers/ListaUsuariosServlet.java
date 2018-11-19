@@ -1,6 +1,7 @@
 package com.borja.controllers;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.borja.database.BBDD;
-import com.borja.models.Usuario;
 
 @WebServlet("/listausuarios")
 public class ListaUsuariosServlet extends HttpServlet {
@@ -25,7 +25,7 @@ public class ListaUsuariosServlet extends HttpServlet {
 		if(session.getAttribute("usuario")!=null) {
 			BBDD bbdd = BBDD.getInstance();
 			request.setAttribute("losUsuarios", bbdd.usuarios);
-			request.getRequestDispatcher("/ListaUsuarios.jsp").forward(request, response);	
+			request.getRequestDispatcher("/listausuarios.jsp").forward(request, response);	
 		}else {
 			response.sendRedirect("login");
 		}
@@ -34,7 +34,7 @@ public class ListaUsuariosServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 

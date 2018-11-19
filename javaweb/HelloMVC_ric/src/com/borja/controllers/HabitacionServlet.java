@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.borja.database.BBDD;
-import com.borja.models.Habitacion;
+
 
 @WebServlet("/habitacion")
 public class HabitacionServlet extends HttpServlet {

@@ -1,7 +1,6 @@
 package com.borja.controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.borja.database.BBDD;
 import com.borja.models.Habitacion;
-import com.borja.models.Usuario;
 
 @WebServlet("/nuevahabitacion")
 public class NuevaHabitacionServlet extends HttpServlet {

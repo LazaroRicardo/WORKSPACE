@@ -64,9 +64,7 @@ public class BBDD {
 				usuarioADevolver = unUsuario;
 				break;
 			}
-
 		}
-
 		return usuarioADevolver;
 	}
 
@@ -81,9 +79,7 @@ public class BBDD {
 				habitacionADevolver = unaHabitacion;
 				break;
 			}
-
 		}
-
 		return habitacionADevolver;
 	}
 
@@ -95,9 +91,7 @@ public class BBDD {
 				existeUsuario = true;
 				break;
 			}
-
 		}
-
 		return existeUsuario;
 	}
 
@@ -114,7 +108,6 @@ public class BBDD {
 				break;
 			}
 		}
-
 		return existeemail;
 	}
 
@@ -138,7 +131,17 @@ public class BBDD {
 		this.habitaciones.add(newHab);
 
 		return nuevoId;
-
 	}
 
+	public boolean borrarUsuarioPorId(int idInt) {
+		
+		for (Usuario unUsuario : usuarios) {
+			if(unUsuario.getId() ==idInt) {
+				this.usuarios.remove(unUsuario);
+				break;
+			}
+		}
+		
+		return true;
+	}
 }

@@ -65,7 +65,9 @@ public class NuevoUsuarioServlet extends HttpServlet {
 			response.sendRedirect("listausuarios");
 
 		} else {
+			//envía mensaje error a los campos mal hechos:
 			request.setAttribute("mensajeerror", "Datos incorrectos");
+			//le prerrellena campos bien hechos:
 			request.setAttribute("newusuario", nuevoUser);
 			this.doGet(request, response);
 		}

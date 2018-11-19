@@ -17,11 +17,15 @@
 	<h1>Usuarios</h1>
 	<ul>
 		<c:forEach var="unUsuario" items="${losUsuarios}">
-			<li><a href="./Usuario?id=${unUsuario.id}">
+			<li>
+			<a href="./Usuario?id=${unUsuario.id}">
 					<div>${unUsuario.id}</div>
 					<div>${unUsuario.name}</div>
 					<div>${unUsuario.email}</div>
-			</a></li>
+					
+			</a>
+			<a href="./borrarusuario?id=${unUsuario.id}">XXX</a>
+			</li>
 		</c:forEach>
 
 	</ul>
