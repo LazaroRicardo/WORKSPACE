@@ -16,11 +16,11 @@
 		<ul>
 			<li>HID: ${laHabitacion.hid}</li>
 			<li>Calle: ${laHabitacion.calle}</li>
-			<li>Metros2: ${laHabitacion.m2}</li>
+			<li>Metros2: ${laHabitacion.metros2}</li>
 			
 			<button id="volverBtn">Volver</button>
 		</ul>
-	<img src="./img/images.png" alt="" />
+	
 </body>
 <script src="./js/script.js"></script>
 </html>

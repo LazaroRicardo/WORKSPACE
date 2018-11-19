@@ -10,6 +10,7 @@ body{
 }
 h1{
 	font-size:2em;
+	color:orange;
 }
 
 ul{
@@ -29,8 +30,12 @@ div.error{
 }
 img{
 	padding: 20px;
+	display: inline-block;
 }
 
 .error{
 	color: red;
+}
+#volverBtn{
+	display: inline-block;
 }

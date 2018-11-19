@@ -29,5 +29,6 @@
   			</li>
 		</c:forEach>
 	</ul>
+	<img src="./img/images.png" alt="" />
 </body>
 </html>

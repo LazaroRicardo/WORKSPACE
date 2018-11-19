@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.ricardo.controlers.HabitacionServlet"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="com.ricardo.modelos.Usuario"/>
-<fullyQualifiedTypeName name="com.ricardo.modelos.Habitacion"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.ricardo.modelo.Cancion"/>
 <fullyQualifiedTypeName name="com.ricardo.database.BBDD"/>
 <fullyQualifiedTypeName name="javax.websocket.Session"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="com.ricardo.modelos.Usuario"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.model.util.ArrayInfoUtil"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.ricardo.modelos.Habitacion"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

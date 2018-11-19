@@ -18,7 +18,7 @@
 		</div>
 	</form>
 
-
+<img src="./img/images.png" alt="" />
 </body>
 
 </html>

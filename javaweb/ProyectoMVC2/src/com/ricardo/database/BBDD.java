@@ -7,22 +7,23 @@ import com.ricardo.modelos.Habitacion;
 import com.ricardo.modelos.Usuario;
 
 public class BBDD {
-	//para transformar la bbdd en singleton y que sea compartida y se privatiza mas abajo:
-	public static BBDD instance=null;
-	
+	// para transformar la bbdd en singleton y que sea compartida y se privatiza mas
+	// abajo:
+	public static BBDD instance = null;
+
 //usuario es un arraylist que dentro va a tener <usuarios> y lo mismo con habitaciones:
 	public ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 	public ArrayList<Habitacion> habitaciones = new ArrayList<Habitacion>();
 
 	public static final BBDD getInstance() {
-		if(instance==null) instance=new BBDD();
-		
-		
+		if (instance == null)
+			instance = new BBDD();
+
 		return instance;
 	}
-	
+
 	private BBDD() {
-		
+
 		this.fillUsuarios();
 		this.fillHabitaciones();
 
@@ -70,44 +71,59 @@ public class BBDD {
 		return usuarioADevolver;
 	}
 
-	public Habitacion getHabitacionById(int hid) {
+	public Habitacion getHabitacionByHid(int hid) {
 		Habitacion habitacionADevolver = null;
 
 		for (Habitacion unaHabitacion : habitaciones) {
 			if (unaHabitacion.getHid() == hid) {
 				habitacionADevolver = unaHabitacion;
 				break;
-			}	
+			}
 		}
-		
+
 		return habitacionADevolver;
 	}
-	
-	//enlazar la existencia de los datos recibidos en el servlet con la base de datos y poder poner email y clave de forma específica:
+
+	// enlazar la existencia de los datos recibidos en el servlet con la base de
+	// datos y poder poner email y clave de forma específica:
 
 	public boolean exiseUsuarioPorEmailYPassword(String emailrecibido, String passwordrecibido) {
 		boolean existeUsuario = false;
-			
-		
-		//nombre de var=unUsuario, tipo de var=Usuario, Valor de var=This.usuarios y lleva el this porque aparecen en esta clase nombrados.
+
+		// nombre de var=unUsuario, tipo de var=Usuario, Valor de var=This.usuarios y
+		// lleva el this porque aparecen en esta clase nombrados.
 		for (Usuario unUsuario : this.usuarios) {
 			if (unUsuario.getEmail().equals(emailrecibido) && unUsuario.getPassword().equals(passwordrecibido)) {
-				existeUsuario = true;	
+				existeUsuario = true;
 				break;
-				}
 			}
-			return existeUsuario;
+		}
+		return existeUsuario;
 	}
 
 	public int insertaUsuario(Usuario nuevoUser) {
-		int nuevoId=0;
-		
-		nuevoId= this.usuarios.size()+1; //simulamos que la base de datos asigna un id consecutivo.
+		int nuevoId = 0;
+
+		nuevoId = this.usuarios.size() + 1; // simulamos que la base de datos asigna un id consecutivo.
 		nuevoUser.setId(nuevoId);
-		
+
 		this.usuarios.add(nuevoUser);
-		
+
 		return nuevoId;
-		
-	}	
+	}
+	
+	public int insertaHabitacion(Habitacion nuevaHab) {
+		int nuevoHid = 0;
+
+		nuevoHid = this.habitaciones.size() + 1; // simulamos que la base de datos asigna un id consecutivo.
+		nuevaHab.setHid(nuevoHid);
+
+		this.habitaciones.add(nuevaHab);
+
+		return nuevoHid;
+	}
+
+	public boolean existeEmail(String emailrecibido) {
+		return false;
+	}
 }

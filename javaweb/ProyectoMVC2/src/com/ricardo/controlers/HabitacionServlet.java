@@ -37,7 +37,7 @@ public class HabitacionServlet extends HttpServlet {
 			// En el request asocio: el atributo "losusuarios" se enlaza a la base de
 			// datos[bbdd] y en la clase jsp si lo pongo con "${}" me saldrá lo que se
 			// encuantra en bbdd
-			request.setAttribute("laHabitacion", bbdd.getHabitacionById(hidH));
+			request.setAttribute("laHabitacion", bbdd.getHabitacionByHid(hidH));
 
 			request.getRequestDispatcher("/habitacion.jsp").forward(request, response);
 		} else {

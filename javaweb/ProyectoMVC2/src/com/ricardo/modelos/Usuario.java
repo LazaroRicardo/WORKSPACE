@@ -1,5 +1,6 @@
 package com.ricardo.modelos;
 
+
 //modelo de MVC:
 public class Usuario {
 
@@ -63,21 +64,26 @@ public class Usuario {
 	// formados y tienen valor:
 	public boolean esValido(String confirmpassword) {
 		boolean esValid = true;
-		
+
 		// matches es para poder meter caracteres específicos y que no se puedan poner
 		// nº en el nombre:
 		if (this.name == null || this.name.equals("") || this.name.matches("(.*)?[0-9](.*)?"))
 			esValid = false;
-		
+
 		// <=0 es que si el @ está al principio o no existe que también sea false:
-				if (this.email == null || this.email.equals("") || this.email.indexOf("@") <= 0)
-					esValid = false;
+		if (this.email == null || this.email.equals("") || this.email.indexOf("@") <= 0)
+			esValid = false;
 
 		if (this.password == null || this.password.equals(""))
 			esValid = false;
 		// confirmacion de password lo hemos creado como parametro para no crearlo al
 		// modelo usuario y así poder enlazarlo al password:
 		if (!this.password.equals(confirmpassword))
+			esValid = false;
+		
+		// para que si te hackean editando en option el hid poniendo letras les de
+		// error, esto va relacionado con int y parsear de registrarse:
+		if (this.habitacion == null)
 			esValid = false;
 
 		return esValid;

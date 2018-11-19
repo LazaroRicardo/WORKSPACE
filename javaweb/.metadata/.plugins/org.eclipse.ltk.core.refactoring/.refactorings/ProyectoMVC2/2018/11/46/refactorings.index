@@ -3,3 +3,6 @@
 1542187618028	Rename type 'Login'
 1542188358963	Move 'login.jsp' to 'WebContent'
 1542204533962	Delete element
+1542359453825	Move 'añadirhabitacion.jsp' to 'WebContent'
+1542359855719	Rename type 'AñadirHabitacionServlet'
+1542359866616	Rename resource 'añadirhabitacion.jsp'
