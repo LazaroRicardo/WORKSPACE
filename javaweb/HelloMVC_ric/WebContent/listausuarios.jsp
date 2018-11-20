@@ -22,7 +22,6 @@
 					<div>${unUsuario.id}</div>
 					<div>${unUsuario.name}</div>
 					<div>${unUsuario.email}</div>
-					
 			</a>
 			<a href="./borrarusuario?id=${unUsuario.id}">XXX</a>
 			</li>

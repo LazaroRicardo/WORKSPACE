@@ -1,0 +1,9 @@
+<web-app version="3.1">
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>IndexServlet</servlet-name>
+  	<display-name>IndexServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.andresbank.servlet.IndexServlet</servlet-class>
+  </servlet>
+</web-app>

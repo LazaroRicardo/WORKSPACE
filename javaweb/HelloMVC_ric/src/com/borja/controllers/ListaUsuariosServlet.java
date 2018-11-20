@@ -28,8 +28,7 @@ public class ListaUsuariosServlet extends HttpServlet {
 			request.getRequestDispatcher("/listausuarios.jsp").forward(request, response);	
 		}else {
 			response.sendRedirect("login");
-		}
-		
+		}	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -37,5 +36,4 @@ public class ListaUsuariosServlet extends HttpServlet {
 	
 		doGet(request, response);
 	}
-
 }
