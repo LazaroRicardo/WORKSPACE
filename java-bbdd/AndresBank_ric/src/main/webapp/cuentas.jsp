@@ -14,9 +14,10 @@
 	
 	<ul>
 	<c:forEach var="unaCuenta" items="${lista_cuentas}">
-		<li>${unaCuenta.nombre} | ${unaCuenta.saldo}</li>
+		<li>${unaCuenta.nombre} | ${unaCuenta.numero} | ${unaCuenta.saldo}</li>
 	</c:forEach>
 	</ul>
+	<a href="crearcuenta">Crear Cuenta</a>
 	
 </body>
 </html>
